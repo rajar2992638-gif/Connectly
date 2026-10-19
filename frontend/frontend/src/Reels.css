@@ -1,0 +1,846 @@
+/* =========================================
+   CONNECTLY REELS
+========================================= */
+
+.reels-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.reels-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  z-index: 100;
+}
+
+
+.reels-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+  text-decoration: none;
+
+  min-width: 180px;
+}
+
+
+.reels-logo span {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+
+.reels-logo strong {
+  font-size: 19px;
+  letter-spacing: 0.2px;
+}
+
+
+.reels-header h2 {
+  flex: 1;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+
+.reels-home {
+  min-width: 180px;
+
+  text-align: right;
+
+  color: #c4a7ff;
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+
+.reels-home:hover {
+  color: #fff;
+}
+
+
+/* =========================================
+   MAIN REELS VIEWER
+========================================= */
+
+.reels-viewer {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+.reels-feed {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+
+.reels-feed::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   EACH REEL
+========================================= */
+
+.reel-card {
+  position: relative;
+
+  width: 420px;
+  height: calc(100vh - 20px);
+
+  min-height: 650px;
+
+  flex: 0 0 calc(100vh - 20px);
+
+  margin: 10px 0;
+
+  scroll-snap-align: center;
+
+  background: #000;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================
+   VIDEO AREA
+========================================= */
+
+.reel-video-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  background: #000;
+
+  overflow: hidden;
+}
+
+
+.reel-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #000;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   SOUND BUTTON
+========================================= */
+
+.reel-sound-button {
+  position: absolute;
+
+  top: 20px;
+  right: 18px;
+
+  z-index: 20;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.reel-sound-button:hover {
+  transform: scale(1.08);
+
+  background: rgba(0, 0, 0, 0.78);
+}
+
+
+.reel-sound-button:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================
+   BOTTOM GRADIENT
+========================================= */
+
+.reel-video-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 45%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   BOTTOM OVERLAY
+========================================= */
+
+.reel-bottom-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 25px 18px 22px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   USER + CAPTION
+========================================= */
+
+.reel-info {
+  flex: 1;
+
+  min-width: 0;
+
+  padding-right: 8px;
+}
+
+
+.reel-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+
+  color: #fff;
+}
+
+
+.reel-avatar {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #ec4899
+  );
+
+  color: #fff;
+
+  font-weight: 800;
+
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+
+.reel-user strong {
+  font-size: 15px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+.reel-caption {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  word-break: break-word;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.reel-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-shrink: 0;
+}
+
+
+.reel-action-button {
+  width: 48px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.8);
+
+  transition:
+    transform 0.18s ease,
+    color 0.18s ease;
+}
+
+
+.reel-action-button:hover {
+  transform: scale(1.12);
+}
+
+
+.reel-action-button span {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(5px);
+
+  font-size: 21px;
+}
+
+
+.reel-action-button small {
+  font-size: 10px;
+
+  color: #fff;
+
+  white-space: nowrap;
+}
+
+
+.reel-liked span {
+  color: #ff3b81;
+}
+
+
+.reel-delete-button:hover {
+  color: #ff5c7a;
+}
+
+
+/* =========================================
+   EMPTY REELS PAGE
+========================================= */
+
+.empty-reels-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #1b1230 0%,
+      #080808 55%,
+      #000 100%
+    );
+}
+
+
+.empty-reels-icon {
+  width: 80px;
+  height: 80px;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #ec4899
+  );
+
+  font-size: 30px;
+
+  box-shadow:
+    0 15px 40px rgba(124, 58, 237, 0.35);
+}
+
+
+.empty-reels-page h2 {
+  margin: 0 0 8px;
+
+  font-size: 25px;
+}
+
+
+.empty-reels-page p {
+  margin: 0 0 22px;
+
+  color: #aaa;
+
+  font-size: 14px;
+}
+
+
+.empty-create-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  background: #7c3aed;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+
+.empty-create-button:hover {
+  background: #6d28d9;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.reels-loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #000;
+
+  color: #fff;
+}
+
+
+.reels-loading-logo {
+  font-size: 45px;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+
+.reels-loading-logo span {
+  color: #a855f7;
+}
+
+
+.reels-loading h2 {
+  margin: 0 0 20px;
+
+  font-size: 18px;
+}
+
+
+.reels-loader {
+  width: 28px;
+  height: 28px;
+
+  border: 3px solid rgba(255, 255, 255, 0.2);
+
+  border-top-color: #a855f7;
+
+  border-radius: 50%;
+
+  animation: reelsSpin 0.8s linear infinite;
+}
+
+
+@keyframes reelsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .reels-logo {
+    min-width: auto;
+  }
+
+  .reels-home {
+    min-width: auto;
+  }
+
+  .reels-header {
+    padding: 0 18px;
+  }
+
+  .reel-card {
+    width: 410px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .reels-page {
+    background: #000;
+  }
+
+
+  .reels-header {
+    height: 58px;
+
+    padding: 0 14px;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.75),
+      transparent
+    );
+
+    border: none;
+
+    backdrop-filter: none;
+  }
+
+
+  .reels-logo {
+    min-width: auto;
+
+    gap: 6px;
+  }
+
+
+  .reels-logo span {
+    font-size: 23px;
+  }
+
+
+  .reels-logo strong {
+    display: none;
+  }
+
+
+  .reels-header h2 {
+    font-size: 18px;
+  }
+
+
+  .reels-home {
+    min-width: auto;
+
+    font-size: 14px;
+
+    color: #fff;
+  }
+
+
+  .reels-viewer {
+    height: 100vh;
+  }
+
+
+  .reels-feed {
+    height: 100vh;
+
+    width: 100%;
+
+    scroll-snap-type: y mandatory;
+  }
+
+
+  .reel-card {
+    width: 100%;
+    height: 100vh;
+
+    min-height: 100vh;
+
+    flex: 0 0 100vh;
+
+    margin: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    scroll-snap-align: start;
+  }
+
+
+  .reel-video-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .reel-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  .reel-sound-button {
+    top: 68px;
+    right: 14px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .reel-bottom-overlay {
+    padding: 20px 14px 28px;
+
+    gap: 10px;
+  }
+
+
+  .reel-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .reel-caption {
+    font-size: 13px;
+
+    max-width: 250px;
+  }
+
+
+  .reel-actions {
+    gap: 13px;
+  }
+
+
+  .reel-action-button {
+    width: 44px;
+  }
+
+
+  .reel-action-button span {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+
+  .reel-action-button small {
+    font-size: 9px;
+  }
+
+
+  .empty-reels-page {
+    padding-top: 70px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .reel-bottom-overlay {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .reel-caption {
+    max-width: 210px;
+
+    font-size: 12px;
+  }
+
+
+  .reel-actions {
+    gap: 10px;
+  }
+
+
+  .reel-action-button span {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+}

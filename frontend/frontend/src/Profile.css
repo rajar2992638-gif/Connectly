@@ -1,0 +1,206 @@
+/* ============================================================
+   Connectly — Profile
+   Same system as Home.css: indigo accent #4F46E5 on white/off-white
+   ============================================================ */
+
+.profile-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  color: #14151a;
+}
+
+/* ================= HEADER ================= */
+
+.profile-header {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #4f46e5 0%, #6d5ff0 45%, #171827 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-top h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-top button {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #4f46e5;
+  background: #eceaff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.profile-top button:hover {
+  background: #ded9ff;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 28px;
+  font-size: 14.5px;
+  color: #4b4d54;
+}
+
+.profile-stats b {
+  color: #14151a;
+  font-weight: 700;
+}
+
+.bio {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #14151a;
+  margin: 0;
+  max-width: 420px;
+}
+
+/* EDIT MODE */
+
+.edit-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 380px;
+}
+
+.edit-box input,
+.edit-box textarea {
+  font-family: inherit;
+  font-size: 14px;
+  color: #14151a;
+  background: #f2f2f5;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.edit-box input:focus,
+.edit-box textarea:focus {
+  background: #ffffff;
+  border-color: #4f46e5;
+}
+
+.edit-box textarea {
+  resize: vertical;
+  min-height: 70px;
+  line-height: 1.5;
+}
+
+/* ================= POSTS ================= */
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 40px 0 20px;
+}
+
+.posts-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #6b6f76;
+  margin: 0 0 16px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.post-grid > div {
+  aspect-ratio: 1 / 1;
+  background: #f2f2f5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.post-grid > div:hover {
+  background: #eceaff;
+  transform: scale(0.97);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 560px) {
+  .profile-header {
+    gap: 20px;
+  }
+
+  .profile-photo {
+    width: 84px;
+    height: 84px;
+    font-size: 34px;
+  }
+
+  .profile-top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .profile-stats {
+    gap: 18px;
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-top {
+    justify-content: center;
+  }
+
+  .profile-stats {
+    justify-content: center;
+  }
+
+  .bio {
+    max-width: none;
+  }
+}

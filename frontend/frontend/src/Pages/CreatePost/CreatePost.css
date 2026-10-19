@@ -1,0 +1,491 @@
+/* =========================
+   CREATE PAGE
+========================= */
+
+.create-page {
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #fff0f7,
+    #f3efff,
+    #eaf7ff
+  );
+
+  color: #222;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.create-header {
+  height: 64px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(15px);
+
+  border-bottom: 1px solid #eadff5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+.create-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.back-button {
+  border: none;
+
+  background: transparent;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  color: #333;
+}
+
+.share-button {
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #ff006e,
+    #8338ec
+  );
+
+  color: white;
+
+  padding: 9px 20px;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.create-container {
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  padding: 45px 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.create-card {
+  width: 650px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e3d8ec;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 45px rgba(90, 50, 130, 0.14);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.create-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 20px;
+}
+
+.create-avatar {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #ff006e,
+    #8338ec
+  );
+
+  color: white;
+
+  font-weight: 800;
+}
+
+.create-title div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.create-title span {
+  color: #888;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-area {
+  width: 100%;
+
+  min-height: 400px;
+
+  background: linear-gradient(
+    135deg,
+    #fff1f8,
+    #f0eaff,
+    #e8f7ff
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-top: 1px solid #eee3f5;
+
+  border-bottom: 1px solid #eee3f5;
+}
+
+.upload-placeholder {
+  text-align: center;
+
+  padding: 40px;
+}
+
+.upload-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff
+  );
+
+  color: white;
+
+  font-size: 38px;
+}
+
+.upload-placeholder h3 {
+  margin: 20px 0 8px;
+
+  font-size: 22px;
+}
+
+.upload-placeholder p {
+  color: #888;
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.select-image-button {
+  display: inline-block;
+
+  background: linear-gradient(
+    135deg,
+    #8338ec,
+    #3a86ff
+  );
+
+  color: white;
+
+  padding: 11px 22px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   IMAGE PREVIEW
+========================= */
+
+.preview-wrapper {
+  width: 100%;
+
+  height: 400px;
+
+  position: relative;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  background: #111;
+}
+
+.remove-image {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: white;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CAPTION
+========================= */
+
+.caption-section {
+  padding: 20px;
+
+  position: relative;
+}
+
+.caption-section label {
+  display: block;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.caption-section textarea {
+  width: 100%;
+
+  min-height: 110px;
+
+  resize: none;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 14px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  font-family: inherit;
+
+  background: #faf8fc;
+}
+
+.caption-section textarea:focus {
+  border-color: #8338ec;
+}
+
+.character-count {
+  text-align: right;
+
+  margin-top: 6px;
+
+  color: #999;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.post-options {
+  margin: 0 20px;
+
+  padding: 15px 0;
+
+  border-top: 1px solid #eee;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.post-options div {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  font-size: 14px;
+}
+
+.post-options div span:first-child {
+  font-size: 20px;
+}
+
+.post-options button {
+  border: none;
+
+  background: transparent;
+
+  font-size: 20px;
+
+  color: #8338ec;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   CREATE BUTTON
+========================= */
+
+.create-post-button {
+  width: calc(100% - 40px);
+
+  margin: 20px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.create-post-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(131, 56, 236, 0.25);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .create-header {
+    padding: 0 15px;
+  }
+
+  .create-card {
+    width: 100%;
+
+    border-radius: 15px;
+  }
+
+  .create-container {
+    padding: 20px 10px;
+  }
+
+  .upload-area {
+    min-height: 330px;
+  }
+
+  .preview-wrapper {
+    height: 330px;
+  }
+
+}
